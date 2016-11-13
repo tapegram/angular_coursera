@@ -2,7 +2,7 @@
   var app = angular.module('NarrowItDownApp', []);
   app.controller('NarrowItDownController', NarrowItDownController);
   app.service('MenuSearchService', MenuSearchService);
-  app.constant('APIMenuItems', 'http://davids-restaurant.herokuapp.com/menu_items.json/');
+  app.constant('APIMenuItems', 'https://davids-restaurant.herokuapp.com/menu_items.json/');
   app.directive('foundItems', FoundItemsDirective);
 
   NarrowItDownController.$inject = ['MenuSearchService'];
