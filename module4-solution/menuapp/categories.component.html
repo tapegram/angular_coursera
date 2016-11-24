@@ -1,0 +1,9 @@
+<h1>Categories!</h1>
+
+<table class="table table-striped">
+  <tr ng-repeat="cat in $ctrl.list">
+    <td>
+      <a ui-sref="items({category: cat.short_name})">{{cat.name}}</a>
+    </td>
+  </tr>
+</table>
