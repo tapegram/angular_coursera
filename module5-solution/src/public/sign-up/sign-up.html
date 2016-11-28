@@ -1,0 +1,76 @@
+<fieldset>
+  <legend>Sign-up</legend>
+  <form name='signUpForm' novalidate class="input-text">
+
+    <input type="text" name="firstname" placeholder="Your first name"
+      ng-model="signUpCtrl.user.first_name"
+      required>
+
+      <span
+        ng-if="signUpForm.firstname.$error.required && signUpForm.firstname.$touched">
+        First name is required
+      </span>
+      <br>
+
+      <input type="text" name="lastname" placeholder="Your last name"
+        ng-model="signUpCtrl.user.last_name"
+        required>
+
+        <span
+          ng-if="signUpForm.lastname.$error.required && signUpForm.lastname.$touched">
+          Last name is required
+        </span>
+        <br>
+
+    <input type="email" name="email" placeholder="Email"
+      ng-model="signUpCtrl.user.email"
+      required>
+      <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+        Must be a valid email address: handle@domain format
+      </span>
+      <br>
+
+      <input type="text" name="address" placeholder="Your address"
+        ng-model="signUpCtrl.user.address"
+        required>
+
+        <span
+          ng-if="signUpForm.address.$error.required && signUpForm.address.$touched">
+          Address is required
+        </span>
+        <br>
+
+    <input type="text" name="phone" placeholder="Phone ###-###-####"
+      ng-model="signUpCtrl.user.phone"
+      pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+        Phone must be in the format ###-###-####.
+      </span>
+      <br>
+
+      <input type="text" name="favorite" placeholder="Your favorite dish (menu number)"
+        ng-model="signUpCtrl.user.fav_short_name"
+        required>
+
+        <span
+          ng-if="signUpForm.favorite.$error.required && signUpForm.favorite.$touched">
+          Favorite dish is required.
+        </span>
+        <br>
+
+    <button
+      ng-disabled="signUpForm.$invalid"
+      ng-click="signUpCtrl.submitForm()">Submit</button>
+
+    <span
+      ng-if="signUpCtrl.resultMessage.length > 0">
+      {{signUpCtrl.resultMessage}}
+    </span>
+  </form>
+</fieldset>
+
+<!-- <div id="info" ng-if="signUpCtrl.completed">
+  Username: {{ signUpCtrl.user.username}} <br>
+  Email: {{ signUpCtrl.user.email}} <br>
+  Phone: {{ signUpCtrl.user.phone }}
+</div> -->

@@ -1,0 +1,63 @@
+<h1>Your information</h1>
+
+<table class="table" ng-if="myInfoCtrl.isRegistered">
+  <tr>
+    <td>
+      First name
+    </td>
+    <td>
+      {{myInfoCtrl.user.first_name}}
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Last name
+    </td>
+    <td>
+      {{myInfoCtrl.user.last_name}}
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Email
+    </td>
+    <td>
+      {{myInfoCtrl.user.email}}
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Address
+    </td>
+    <td>
+      {{myInfoCtrl.user.address}}
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Phone
+    </td>
+    <td>
+      {{myInfoCtrl.user.phone}}
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Favorite
+    </td>
+    <td>
+      <menu-item menu-item="myInfoCtrl.favorite"></menu-item>
+    </td>
+  </tr>
+</table>
+
+<span ng-if="!myInfoCtrl.isRegistered">
+  <a ui-sref="public.sign-up">
+    Not Signed up Yet. Sign up Now!
+  </a>
+</span>
